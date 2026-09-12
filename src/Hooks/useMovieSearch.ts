@@ -16,7 +16,7 @@ const useMovieSearch = (query :string) => {
         const loadMovies = async () => {
             setLoading(true)
             try{
-                const response = await fetch(`http://www.omdbapi.com/?apikey=5d1ce4fe&s=${query}`)
+                const response = await fetch(`https://www.omdbapi.com/?apikey=5d1ce4fe&s=${query}`)
                 if (!response.ok) {
                     setError('Ошибка запроса')
                     setLoading(false)
