@@ -1,0 +1,22 @@
+import type {MovieShort} from "../Hooks/useMovieSearch.ts";
+import MovieCard from "./MovieCard.tsx";
+
+interface MovieListProps {
+    movie: MovieShort[];
+    loading: boolean;
+    error: string | null
+}
+
+function MovieList({movie, loading, error} : MovieListProps) {
+
+    if  (loading) return <p>Загрузка...</p>
+    else if (error !== null) return <p>{error}</p>
+    else if (!movie.length) return <p>Фильмов не найдено</p>
+    return (
+        <div>
+            {movie.map(mov => <MovieCard mov={mov} key={mov.imdbID}/>)}
+        </div>
+    )
+}
+
+export default MovieList

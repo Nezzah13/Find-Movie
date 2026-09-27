@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 
-interface MovieShort {
+export interface MovieShort {
     Poster: string;
     Title: string;
     Year: string;
@@ -15,6 +15,7 @@ const useMovieSearch = (query :string) => {
     useEffect(() => {
         const loadMovies = async () => {
             setLoading(true)
+            setError(null)
             try{
                 const response = await fetch(`https://www.omdbapi.com/?apikey=5d1ce4fe&s=${query}`)
                 if (!response.ok) {
@@ -28,6 +29,7 @@ const useMovieSearch = (query :string) => {
                     setLoading(false)
                     return
                 }
+                setError(null)
                 setMovie(data.Search)
             } catch (err) {
                 setError(String(err))
