@@ -1,4 +1,5 @@
 import type {MovieShort} from "../Hooks/useMovieSearch.ts";
+import "../Styles/MovieCard.css"
 
 interface MovieCardProps {
     mov: MovieShort;
@@ -6,10 +7,10 @@ interface MovieCardProps {
 
 function MovieCard({mov} : MovieCardProps) {
     return (
-        <div>
-                Название: {mov.Title}
-                Год: {mov.Year}
-                <img src={mov.Poster} alt={mov.Title}/>
+        <div className="movie-card">
+                <img src={mov.Poster} alt={mov.Title} className="movie-card-img"/>
+                <p>Название: {mov.Title}</p>
+                <p>Год: {mov.Year}</p>
         </div>
     )
 }
