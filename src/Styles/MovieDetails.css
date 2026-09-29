@@ -1,0 +1,42 @@
+.movie-details-background {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.movie-details {
+    border: 2px solid black;
+    min-width: 300px;
+    max-width: 1000px;
+    max-height: 700px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    position: relative;
+}
+
+.details-content {
+    display: flex;
+    gap: 20px;
+}
+
+.x-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.img-poster {
+    width: 40%;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+.header-name {
+    text-align: center;
+}
