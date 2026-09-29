@@ -1,3 +1,4 @@
+import {memo} from "react";
 import type {MovieShort} from "../Hooks/useMovieSearch.ts";
 import "../Styles/MovieCard.css"
 
@@ -17,4 +18,4 @@ function MovieCard({mov, setSelectedMovieId} : MovieCardProps) {
     )
 }
 
-export default MovieCard
+export default memo(MovieCard)
