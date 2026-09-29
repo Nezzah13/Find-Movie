@@ -12,7 +12,7 @@ function MovieCard({mov, setSelectedMovieId} : MovieCardProps) {
             <img src={mov.Poster} alt={mov.Title} className="movie-card-img"/>
             <p className="text-title">Название: {mov.Title}</p>
             <p className="text-year">Год: {mov.Year}</p>
-            <button type={"button"} onClick={() => setSelectedMovieId(mov.imdbID)}>i</button>
+            <button className="i-button" type={"button"} onClick={() => setSelectedMovieId(mov.imdbID)}>i</button>
         </div>
     )
 }
