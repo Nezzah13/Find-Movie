@@ -18,7 +18,7 @@ const useMovieSearch = (query :string) => {
             setLoading(true)
             setError(null)
             try{
-                const response = await fetch(`https://www.omdbapi.com/?apikey=5d1ce4fe&s=${query}`)
+                const response = await fetch(`https://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&s=${query}`)
                 if (!response.ok) {
                     setError('Ошибка запроса')
                     setLoading(false)

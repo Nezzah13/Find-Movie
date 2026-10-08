@@ -21,7 +21,7 @@ const useMovieDetails = (filmId : string | null) => {
             setFullLoading(true)
             setFullError(null)
             try {
-                const response = await fetch(`https://www.omdbapi.com/?apikey=5d1ce4fe&i=${filmId}`)
+                const response = await fetch(`https://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&i=${filmId}`)
                 if (!response.ok) {
                     setFullError('Ошибка')
                     setFullLoading(false)
