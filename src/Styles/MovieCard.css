@@ -24,9 +24,35 @@
     margin-left: 3px;
 }
 
-.i-button {
+.movie-button {
     border: 1px solid #812100;
     border-radius: 10px;
     padding-top: 4px;
     background-color: #ec523b;
+    transition: transform 0.15s, filter 0.15s;
+}
+
+.movie-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.movie-button:active {
+    transform: scale(0.9);
+}
+
+.dark-movie-button {
+    border: 1px solid #812100;
+    border-radius: 10px;
+    padding-top: 4px;
+    background-color: #781400;
+    transition: transform 0.15s, filter 0.15s;
+}
+.dark-movie-button:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.dark-movie-button:active {
+    transform: scale(0.9);
 }
