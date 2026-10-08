@@ -13,6 +13,7 @@ const useMovieSearch = (query :string) => {
     const [error, setError] = useState<string | null>(null)
 
     useEffect(() => {
+        if (!query) return
         const loadMovies = async () => {
             setLoading(true)
             setError(null)
