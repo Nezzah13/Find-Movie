@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 import useDebounce from "./Hooks/useDebounce.ts";
 import useMovieSearch from "./Hooks/useMovieSearch.ts";
 import useMovieDetails from "./Hooks/useMovieDetails.ts";
@@ -21,7 +21,7 @@ function App() {
     const [favoriteMovies, setFavoriteMovies] = useState<MovieShort[]>([])
     const [viewedMovies, setViewedMovies] = useState<MovieShort[]>([])
 
-    const toggleFavorite = (newMovie : MovieShort) => {
+    const toggleFavorite = useCallback((newMovie : MovieShort) => {
         setFavoriteMovies(prev => {
             if (prev.some(mov => mov.imdbID === newMovie.imdbID)) {
                 return prev.filter(mov => mov.imdbID !== newMovie.imdbID)
@@ -30,8 +30,8 @@ function App() {
                 return [...prev, newMovie]
             }
         })
-    }
-    const toggleViewed = (newMovie : MovieShort) => {
+    }, [])
+    const toggleViewed = useCallback((newMovie : MovieShort) => {
         setViewedMovies(prev => {
             if (prev.some(mov => mov.imdbID === newMovie.imdbID)) {
                 return prev.filter(mov => mov.imdbID !== newMovie.imdbID)
@@ -40,7 +40,7 @@ function App() {
                 return [...prev, newMovie]
             }
         })
-    }
+    }, [])
 
     const deleteFavoriteMovie = (newMovie : MovieShort) => {
         setFavoriteMovies(prev => prev.filter(mov => mov.imdbID !== newMovie.imdbID))
