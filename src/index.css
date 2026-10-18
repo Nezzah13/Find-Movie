@@ -1,4 +1,42 @@
-body {
-    background-color: #f5ead9;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap');
+
+:root {
+    --bg: #1a0e11;
+    --surface: #2a1a1e;
+    --surface-2: #3a242a;
+    --line: #4a3038;
+    --text: #f4e9dd;
+    --muted: #b9a596;
+    --brass: #d9a441;
+    --brass-ink: #2a1a05;
+    --sidebar-w: 220px;
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
 }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding-left: var(--sidebar-w);
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    font-family: inherit;
+}
+

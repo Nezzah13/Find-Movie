@@ -1,33 +1,61 @@
 .side-bar {
-    border: 2px solid darkred;
-    border-radius: 10px;
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 900;
+    width: var(--sidebar-w);
     height: 100vh;
-    width: 150px;
     display: flex;
     flex-direction: column;
-    z-index: 900;
-    background-color: #fd7b33;
-    text-align: center;
-    gap: 2px;
+    gap: 6px;
+    padding: 24px 14px;
+    background-color: var(--surface);
+    border-right: 1px solid var(--line);
 }
 
 .bar-button {
-    background-color: #ff974a;
-    border-radius: 15px;
-    border: 1px solid #cc6b49;
-    height: 7vh;
-    font-size: 14px;
-    transition: transform 0.15s, filter 0.15s;
+    font-size: 15px;
+    font-weight: 500;
+    text-align: left;
+    color: var(--muted);
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: color 0.15s, background-color 0.15s, transform 0.12s;
 }
 
 .bar-button:hover {
-    transform: scale(1.05);
-    filter: brightness(1.2);
+    color: var(--text);
+    background-color: var(--surface-2);
 }
 
 .bar-button:active {
-    transform: scale(0.9);
+    transform: scale(0.97);
+}
+
+.bar-button:focus-visible {
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+}
+
+@media (max-width: 720px) {
+    .side-bar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        gap: 6px;
+        padding: 10px 12px;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+        overflow-x: auto;
+    }
+
+    .bar-button {
+        flex: 1 0 auto;
+        text-align: center;
+        padding: 10px 12px;
+        font-size: 14px;
+    }
 }
