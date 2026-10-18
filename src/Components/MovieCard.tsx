@@ -15,7 +15,7 @@ function MovieCard({mov, setSelectedMovieId, toggleFavorite, toggleViewed, favor
     return (
         <div className="movie-card">
             <img src={mov.Poster} alt={mov.Title} className="movie-card-img"/>
-            <p className="text-title">Название: {mov.Title}</p>
+            <p className="text-title">{mov.Title}</p>
             <p className="text-year">Год: {mov.Year}</p>
             <button className="movie-button" type={"button"} onClick={() => setSelectedMovieId(mov.imdbID)}>ℹ️</button>
             <button className={favoriteStatus ? "dark-movie-button" : "movie-button"} type={"button"} onClick={() => toggleFavorite(mov)}>⭐</button>

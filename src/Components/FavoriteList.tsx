@@ -13,7 +13,7 @@ function FavoriteList({favoriteMovies, setSelectedMovieId, deleteFavoriteMovie}:
             {favoriteMovies.map(mov => {
           return  <div className="movie-card" key={mov.imdbID}>
               <img src={mov.Poster} alt={mov.Title} className="movie-card-img"/>
-              <p className="text-title">Название: {mov.Title}</p>
+              <p className="text-title">{mov.Title}</p>
               <p className="text-year">Год: {mov.Year}</p>
               <button className="movie-button" type={"button"} onClick={() => setSelectedMovieId(mov.imdbID)}>ℹ️</button>
               <button type="button" className="movie-button" onClick={() => deleteFavoriteMovie(mov)}>🗑</button>
